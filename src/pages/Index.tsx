@@ -3,6 +3,7 @@ import { Navigation } from "@/components/Navigation";
 import { ProductCard } from "@/components/ProductCard";
 import { PageTransition } from "@/components/PageTransition";
 import { Testimonials } from "@/components/Testimonials";
+import { Stats } from "@/components/Stats";
 import { products } from "@/data/products";
 import { Sparkles, ArrowRight } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
@@ -81,6 +82,9 @@ const Index = () => {
             </motion.div>
           </div>
         </section>
+
+        {/* Stats Section */}
+        <Stats />
 
         {/* Products Grid */}
         <section className="py-20 px-6">

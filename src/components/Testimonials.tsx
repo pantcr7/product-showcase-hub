@@ -23,11 +23,32 @@ const testimonials = [
     rating: 5,
     avatar: "ER",
   },
+  {
+    name: "David Park",
+    role: "Lead Designer at Figma",
+    content: "Canvas is a game-changer for our design workflow. Collaboration has never been smoother.",
+    rating: 5,
+    avatar: "DP",
+  },
+  {
+    name: "Priya Sharma",
+    role: "Product Manager at Stripe",
+    content: "Insights gave us visibility we never had before. Data-driven decisions are now effortless.",
+    rating: 5,
+    avatar: "PS",
+  },
+  {
+    name: "Alex Thompson",
+    role: "Senior Developer at Vercel",
+    content: "Launchpad eliminated our deployment anxiety. We ship with confidence every single day.",
+    rating: 5,
+    avatar: "AT",
+  },
 ];
 
 export function Testimonials() {
   return (
-    <section className="py-24 px-6">
+    <section className="py-24 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -43,17 +64,18 @@ export function Testimonials() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="glass-card rounded-2xl p-6 relative"
+              transition={{ delay: index * 0.08 }}
+              whileHover={{ y: -5 }}
+              className="glass-card rounded-2xl p-6 relative group"
             >
-              <Quote className="absolute top-4 right-4 w-8 h-8 text-primary/20" />
+              <Quote className="absolute top-4 right-4 w-8 h-8 text-primary/20 group-hover:text-primary/40 transition-colors" />
               
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
